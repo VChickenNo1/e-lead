@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-for遍历数组</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul v-for="(item,index) in product">
+				<li>{{item.name}}</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		//view model
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[111,222,333],
+				product:[
+					{id:1,name:"电脑",price:10000},
+					{id:2,name:"手机",price:6000}
+				]
+            }
+        })
+	</script>
+</html>

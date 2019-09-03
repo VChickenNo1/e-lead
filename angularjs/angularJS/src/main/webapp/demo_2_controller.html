@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门demo_控制器</title>
+    <!--第一步，引入angular的jar包-->
+    <script src="angular.min.js"></script>
+    <script>
+       //建立模块
+       var app=angular.module("myApp",[])
+       //创建控制器
+       app.controller("myController",function ($scope) {
+           //$scope 视图层和控制层数据交换的桥梁(可以理解为变量)
+           $scope.add=function () {
+             return  $scope.aaa+$scope.bbb
+           }
+       })
+
+
+    </script>
+</head>
+<!--ng-app声明是angularjs-->
+<body ng-app="myApp" ng-controller="myController">
+第一个数:<input type="number" ng-model="aaa">
+第二个数:<input type="number" ng-model="bbb">
+{{add()}}
+
+
+</body>
+</html>

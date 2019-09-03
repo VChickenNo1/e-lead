@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快速入门</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+		<script src="js/axios-0.18.0.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{aaa}}
+			<table>
+				<tr >
+					<td>{{true?123:321}}</td>
+				</tr>
+			</table>
+			<button @click="fun1('李四')">按钮</button>
+			<button @keyDown="fun2('wangwu')">按钮</button>
+		</div>
+	</body>
+	<script>
+		//view model
+		new Vue({
+			el:"#app",
+			data:{
+			    aaa:"张三11111",
+				bbb:"23",
+				ccc:[111,222,333,444]
+			},
+			methods:{
+				fun1:function (msg) {
+					this.aaa=msg;
+                },
+                fun2:function (msg) {
+                    this.aaa=msg;
+                },
+
+			}
+		})
+
+
+	</script>
+</html>

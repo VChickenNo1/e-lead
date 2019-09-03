@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门demo_内置服务$http</title>
+    <script src="angular.min.js"></script>
+    <script>
+       //建立模块
+       var app=angular.module("myApp",[])
+       //创建控制器
+       app.controller("myController",function ($scope,$http) {
+           $scope.queryList=function () {
+               //get/post请求,括号参数写接口路径,本质就是ajax请求
+               $http.get("data.json").success(
+                   function (res) {
+                       $scope.list=res;
+                   }
+               )
+           }
+       })
+
+
+    </script>
+</head>
+<!--ng-app声明是angularjs-->
+<body ng-app="myApp" ng-controller="myController" ng-init="queryList() ">
+<table>
+    <tr ng-repeat="a in list">
+        <td>
+            {{a.name}}
+        </td>
+        <td>
+            {{a.age}}
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

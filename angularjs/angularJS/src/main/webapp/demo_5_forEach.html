@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门demo_循环对象</title>
+    <script src="angular.min.js"></script>
+    <script>
+       //建立模块
+       var app=angular.module("myApp",[])
+       //创建控制器
+       app.controller("myController",function ($scope) {
+           $scope.list=[
+               {name:"zhangsan",age:"23"},
+               {name:"lisi",age:"24"},
+               {name:"wangwu",age:"25"}
+                ];
+       })
+
+
+    </script>
+</head>
+<!--ng-app声明是angularjs-->
+<body ng-app="myApp" ng-controller="myController">
+<table>
+    <tr ng-repeat="a in list">
+        <td>
+            {{a.name}}
+        </td>
+        <td>
+            {{a.age}}
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
